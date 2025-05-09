@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Upload Timetable</title>
+  <link rel="stylesheet" href="css/upload.css" />
+  <script src="js/upload.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <h1>TimeTable Portal</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Admin Login</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2>Admin Dashboard</h2>
+
+    <div class="upload-card">
+      <div class="upload-header">
+        <h3>Upload Timetable</h3>
+        <p>
+          Upload a CSV file containing the timetable data. The file should have the following columns: 
+          <strong>Semester, Section, Day, Time Slot, Subject, Teacher</strong>
+        </p>
+      </div>
+
+      <form id="uploadForm">
+        <label for="csvFile">Timetable CSV File</label>
+        <input type="file" id="csvFile" accept=".csv" required />
+
+        <button type="submit">Upload and Process</button>
+        <p class="upload-hint">Make sure your CSV file is correctly formatted.</p>
+        <p id="uploadStatus" class="status-message"></p>
+      </form>
+    </div>
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </main>
+
+  <footer>
+    <p>© 2025 TimeTable Portal. All rights reserved.</p>
+  </footer>
+
+  <script src="upload.js"></script>
+</body>
+</html>
