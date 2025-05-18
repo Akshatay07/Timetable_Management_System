@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Timetable = require('../models/Timetable');
 
-// ➕ CREATE - Add a timetable entry
+//  CREATE - Add a timetable entry
 router.post('/add', async (req, res) => {
   try {
     const newEntry = new Timetable(req.body);
@@ -13,7 +13,7 @@ router.post('/add', async (req, res) => {
   }
 });
 
-// 🚀 BULK UPLOAD - Add multiple timetable entries
+//BULK UPLOAD - Add multiple timetable entries
 router.post('/add-bulk', async (req, res) => {
     try {
       if (!Array.isArray(req.body)) {
@@ -26,7 +26,7 @@ router.post('/add-bulk', async (req, res) => {
     }
   });
   
-// 📄 READ - Get entries with optional filters
+//READ - Get entries with optional filters
 router.get('/', async (req, res) => {
   try {
     const filters = {};
@@ -41,7 +41,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// ✏️ UPDATE - Modify a timetable entry
+//UPDATE - Modify a timetable entry
 router.put('/:id', async (req, res) => {
   try {
     const updated = await Timetable.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -51,7 +51,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// ❌ DELETE - Remove a timetable entry
+// DELETE - Remove a timetable entry
 router.delete('/:id', async (req, res) => {
   try {
     await Timetable.findByIdAndDelete(req.params.id);

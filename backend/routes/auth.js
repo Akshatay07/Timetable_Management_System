@@ -5,7 +5,7 @@ const { OAuth2Client } = require('google-auth-library');
 const router = express.Router();
 
 // ✅ Replace with your real Google OAuth Client ID
-const CLIENT_ID = '581747969666-mkha11j4mp9v0ihp4ag5h9hsg32gt9mu.apps.googleusercontent.com';
+const CLIENT_ID = process.env.My_CLient_id;
 const client = new OAuth2Client(CLIENT_ID);
 
 router.post('/google-login', async (req, res) => {
